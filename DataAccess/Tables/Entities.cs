@@ -16,14 +16,14 @@ namespace DataAccess.Tables
         }
 
         public virtual DbSet<Answer> Answers { get; set; }
-        public virtual DbSet<Categorie> Categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<GameQuestion> GameQuestions { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<LanguageAnswer> LanguagesAnswer { get; set; }
         public virtual DbSet<LanguageQuestion> LanguagesQuestion { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
-        public virtual DbSet<Subcategorie> Subcategories { get; set; }
+        public virtual DbSet<Subcategory> Subcategories { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -52,7 +52,7 @@ namespace DataAccess.Tables
                     .HasConstraintName("answers_fk");
             });
 
-            modelBuilder.Entity<Categorie>(entity =>
+            modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("categories");
 
@@ -94,7 +94,7 @@ namespace DataAccess.Tables
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.CategoriaId).HasColumnName("categoria_id");
+                entity.Property(e => e.CategoryId).HasColumnName("categoria_id");
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
@@ -102,19 +102,19 @@ namespace DataAccess.Tables
 
                 entity.Property(e => e.Score).HasColumnName("score");
 
-                entity.Property(e => e.SubcategorieId).HasColumnName("subcategorie_id");
+                entity.Property(e => e.SubcategoryId).HasColumnName("subcategorie_id");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
-                entity.HasOne(d => d.Categoria)
+                entity.HasOne(d => d.Category)
                     .WithMany(p => p.Games)
-                    .HasForeignKey(d => d.CategoriaId)
+                    .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("games_fk_1");
 
-                entity.HasOne(d => d.Subcategorie)
+                entity.HasOne(d => d.Subcategory)
                     .WithMany(p => p.Games)
-                    .HasForeignKey(d => d.SubcategorieId)
+                    .HasForeignKey(d => d.SubcategoryId)
                     .HasConstraintName("games_fk_2");
 
                 entity.HasOne(d => d.User)
@@ -203,31 +203,31 @@ namespace DataAccess.Tables
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.SubcategorieId).HasColumnName("subcategorie_id");
+                entity.Property(e => e.SubcategoryId).HasColumnName("subcategorie_id");
 
                 entity.HasOne(d => d.Subcategorie)
                     .WithMany(p => p.Questions)
-                    .HasForeignKey(d => d.SubcategorieId)
+                    .HasForeignKey(d => d.SubcategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("questions_fk");
             });
 
-            modelBuilder.Entity<Subcategorie>(entity =>
+            modelBuilder.Entity<Subcategory>(entity =>
             {
                 entity.ToTable("subcategories");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.CategorieId).HasColumnName("categorie_id");
+                entity.Property(e => e.CategoryId).HasColumnName("categorie_id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("name")
                     .HasMaxLength(100);
 
-                entity.HasOne(d => d.Categorie)
+                entity.HasOne(d => d.Category)
                     .WithMany(p => p.Subcategories)
-                    .HasForeignKey(d => d.CategorieId)
+                    .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("subcategories_fk");
             });

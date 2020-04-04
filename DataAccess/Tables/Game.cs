@@ -12,13 +12,13 @@ namespace DataAccess.Tables
 
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int CategoriaId { get; set; }
+        public int CategoryId { get; set; }
         public int? Score { get; set; }
-        public int? SubcategorieId { get; set; }
+        public int? SubcategoryId { get; set; }
         public DateTime? Date { get; set; }
 
-        public virtual Categorie Categoria { get; set; }
-        public virtual Subcategorie Subcategorie { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual Subcategory Subcategory { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<GameQuestion> GameQuestions { get; set; }
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace DataAccess.Tables
 {
-    public partial class Subcategorie
+    public partial class Subcategory
     {
-        public Subcategorie()
+        public Subcategory()
         {
             Games = new HashSet<Game>();
             Questions = new HashSet<Question>();
@@ -13,9 +13,9 @@ namespace DataAccess.Tables
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public int CategorieId { get; set; }
+        public int CategoryId { get; set; }
 
-        public virtual Categorie Categorie { get; set; }
+        public virtual Category Category { get; set; }
         public virtual ICollection<Game> Games { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
     }

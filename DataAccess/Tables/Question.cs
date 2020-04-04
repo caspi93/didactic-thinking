@@ -13,9 +13,9 @@ namespace DataAccess.Tables
         }
 
         public int Id { get; set; }
-        public int SubcategorieId { get; set; }
+        public int SubcategoryId { get; set; }
 
-        public virtual Subcategorie Subcategorie { get; set; }
+        public virtual Subcategory Subcategorie { get; set; }
         public virtual ICollection<Answer> Answers { get; set; }
         public virtual ICollection<GameQuestion> GameQuestions { get; set; }
         public virtual ICollection<LanguageQuestion> LanguagesQuestion { get; set; }
