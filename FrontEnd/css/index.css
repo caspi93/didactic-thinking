@@ -1,0 +1,77 @@
+﻿body {
+    background: azure;
+}
+
+.container {
+    background-color: aquamarine;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+nav {
+    height: 3rem;
+}
+
+header {
+    height: 10vh;
+    background-color: white;
+}
+
+main {
+    background-color: yellow;
+    height: calc(100vh - 10vh - 3rem - 55px);
+    display: flex;
+}
+
+main aside{
+    width:30%;
+    height: 100%;
+}
+
+main section {
+    width: 70%;
+    height: 100%;
+    flex-direction: row;
+}
+
+@media (min-width: 576px) {
+    header {
+        height: 31vh;
+        width: 100%;
+    }
+
+    main {
+        background-color: yellow;
+        height: calc(100vh - 31vh - 3rem - 55px);
+        display: flex;
+    }
+
+    main aside {
+        width: 30%;
+        height: calc(100vh - 31vh - 3rem - 55px);
+    }
+
+    main section {
+        width: 70%;
+        height: calc(100vh - 31vh - 3rem - 55px);
+        flex-direction:row;
+    }
+}
+
+footer {
+    height: 55px;
+    display: flex;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#footer-text {
+    display: flex;
+    text-align: center;
+    color: white;
+}

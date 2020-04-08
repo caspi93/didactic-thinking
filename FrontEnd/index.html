@@ -1,13 +1,99 @@
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Piensa y Diviértete</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="Iconos/fonts/style.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
     <div class="container">
-        <!-- Content here -->
+        <header>
+            <img src="Images/luisk.svg">
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="/" target="principal"><span class="icon-home"></span> Piensa & Diviértete</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="margin-left: auto">
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/"><span class='icon-user-plus'></span> Registrarse<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/"><span class='icon-enter'></span> Iniciar Sesión<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/"><span class='icon-exit'></span> Cerrar Sesión<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <aside style="overflow:scroll">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Matemáticas
+                                </button>
+                            </h5>
+                        </div>
 
-
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                Operaciones Matemáticas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Geografía
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Capitales de Europa</li>
+                                    <li class="list-group-item">Capitales de Asia</li>
+                                    <li class="list-group-item">Capitales de África</li>
+                                    <li class="list-group-item">Capitales de América</li>
+                                    <li class="list-group-item">Capitales de Oceanía</li>
+                                    <li class="list-group-item">Capitales de Eurpa</li>
+                                    <li class="list-group-item">Capitales de Asia</li>
+                                    <li class="list-group-item">Capitales de África</li>
+                                    <li class="list-group-item">Capitales de América</li>
+                                    <li class="list-group-item">Capitales de Oceanía</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <section style="overflow:scroll">
+                <span> Algo de contenido</span>
+            </section>
+        </main>
+        <footer class="bg-primary">
+            <div>
+                <span id="footer-text"> 2020 Todos los Derechos Reservados &copy;Luís Carlos Pedroza</span>
+            </div>
+        </footer>
     </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Main.js"></script>
 </body>
 </html>
